@@ -1,5 +1,3 @@
-FROM eclipse-temurin:17-jdk-alpine
-COPY target/spring-petclinic-*.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app.jar"]
-
+FROM registry.redhat.io/ubi8/openjdk-17
+COPY target/*.jar /deployments/app.jar
+ENTRYPOINT ["java", "-jar", "/deployments/app.jar"]
