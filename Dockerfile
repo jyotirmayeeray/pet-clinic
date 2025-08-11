@@ -1,3 +1,3 @@
-FROM quay.io/redhat-openjdk/openjdk-17-ubi8:latest
+FROM registry.access.redhat.com/ubi8/openjdk-17:latest
 COPY target/*.jar /deployments/app.jar
 ENTRYPOINT ["java", "-jar", "/deployments/app.jar"]
